@@ -3,7 +3,12 @@ package Steps;
 import org.openqa.selenium.WebDriver;
 
 import Factory.DriverFactory;
+import Pages.ContactUsPage;
+import Pages.FixturesPage;
+import Pages.GalleryPage;
 import Pages.MainPage;
+import Pages.NewsPage;
+import Pages.TeamsPage;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
@@ -14,6 +19,11 @@ public class NavSteps {
 	
 	WebDriver driver;
 	MainPage mainPage = new MainPage();
+	TeamsPage TP = new TeamsPage();
+	FixturesPage FP = new FixturesPage();
+	GalleryPage GP = new GalleryPage();
+	NewsPage NP = new NewsPage();
+	ContactUsPage CP = new ContactUsPage();
 	
 	 @Before
 	    public void before(Scenario scenario) {
@@ -41,19 +51,17 @@ public class NavSteps {
 
 	@Then("I should be at the Teams page")
 	public void i_should_be_at_the_teams_page() {
-	    mainPage.checkTeams(driver);
+	    TP.checkTeams(driver);
 	}
 	
 	@When("I click the teams Fixtures option")
 	public void i_click_the_teams_fixtures_option() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    mainPage.clickFixturesNav(driver);
 	}
 
 	@Then("I should be at the fixtures page")
 	public void i_should_be_at_the_fixtures_page() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    FP.checkFixtures(driver);
 	}
 
 	@When("I click the teams gallery option")
@@ -63,19 +71,17 @@ public class NavSteps {
 
 	@Then("I should be at the gallery page")
 	public void i_should_be_at_the_gallery_page() {
-	    mainPage.checkGallery(driver);
+	    GP.checkGallery(driver);
 	}
 
 	@When("I click the News option")
 	public void i_click_the_news_option() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    mainPage.clickNewsNav(driver);
 	}
 
 	@Then("I should be at the news page")
 	public void i_should_be_at_the_news_page() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    NP.checkNews(driver);
 	}
 	
 	@When("I click the Contact Us option")
@@ -85,6 +91,6 @@ public class NavSteps {
 
 	@Then("I should be at the Contact Us page")
 	public void i_should_be_at_the_contact_us_page() {
-	    mainPage.checkContact(driver);
+	    CP.checkContact(driver);
 	}
 }

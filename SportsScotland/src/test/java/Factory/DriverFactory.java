@@ -7,8 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class DriverFactory {
 
 	private static WebDriver driver;
-    private static final String CHROME_DRIVER_PATH = "C://Users//Ben Everest//Documents//Sports-Scotland-Automation//SportsScotland//src//test//resources//chromedriver.exe"; // Update this path
-
+    private static final String CHROME_DRIVER_PATH = "C:\\Users\\Ben Everest\\eclipse-workspace\\SportsScotland\\src\\test\\resources\\chromedriver.exe";
     public static WebDriver getDriver() {
         if (driver == null) {
             System.setProperty("webdriver.chrome.driver", CHROME_DRIVER_PATH);
