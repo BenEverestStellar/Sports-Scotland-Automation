@@ -1,6 +1,7 @@
 package Pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 public class MainPage {
@@ -12,6 +13,10 @@ public class MainPage {
 	By contactNavButton = By.xpath("//a[@class='hfe-menu-item'][normalize-space()='Contact Us']");
 	By fixturesNavButton = By.xpath("//a[@class='hfe-menu-item'][normalize-space()='Fixtures']");
 	By newsNavButton = By.xpath("//a[@class='hfe-menu-item'][normalize-space()='News']");
+	By latestNewsButton = By.xpath("//div[@id='home-button-news']//a[@class='elementor-button elementor-button-link elementor-size-sm']");
+	By recentResultsButton = By.xpath("//div[@class='elementor-element elementor-element-10761de elementor-align-justify elementor-widget elementor-widget-button']//span[@class='elementor-button-content-wrapper']");
+	By upcomingMatchesButton = By.xpath("//div[@class='elementor-element elementor-element-0d8be29 elementor-align-justify elementor-widget elementor-widget-button']//span[@class='elementor-button-content-wrapper']");
+	By viewMoreButton = By.xpath("//div[@id='home-button-more']//div[@class='elementor-widget-container']");
 	
 	public void clickHomeNav(WebDriver driver) throws InterruptedException {
 		Thread.sleep(5000);
@@ -74,4 +79,75 @@ public class MainPage {
 		}
 		driver.findElement(newsNavButton).click();
 	}
+	
+	public void clickLatestNews(WebDriver driver) {
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollTo(0,document.body.scrollHeight);");
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		driver.findElement(latestNewsButton).click();
+	}
+	
+	public void clickRecentResults(WebDriver driver) {
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollTo(0,document.body.scrollHeight);");
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		driver.findElement(recentResultsButton).click();
+	}
+	public void clickUpcomingMatches(WebDriver driver) {
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollTo(0,document.body.scrollHeight);");
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		driver.findElement(upcomingMatchesButton).click();
+	}
+	public void clickViewMore(WebDriver driver) {
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollTo(0,document.body.scrollHeight);");
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		driver.findElement(viewMoreButton).click();
+	}
+	
 }

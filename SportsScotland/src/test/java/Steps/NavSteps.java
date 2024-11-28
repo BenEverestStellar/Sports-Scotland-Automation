@@ -18,7 +18,7 @@ import io.cucumber.java.en.When;
 public class NavSteps {
 	
 	WebDriver driver;
-	MainPage mainPage = new MainPage();
+	MainPage MP = new MainPage();
 	TeamsPage TP = new TeamsPage();
 	FixturesPage FP = new FixturesPage();
 	GalleryPage GP = new GalleryPage();
@@ -36,17 +36,17 @@ public class NavSteps {
 
 	@When("I click the home nav option")
 	public void i_click_the_home_nav_option() throws InterruptedException {
-	    mainPage.clickHomeNav(driver);
+	    MP.clickHomeNav(driver);
 	}
 
 	@Then("I should be at the home page")
 	public void i_should_be_at_the_home_page() {
-	    mainPage.checkHome(driver);
+	    MP.checkHome(driver);
 	}
 
 	@When("I click the teams nav option")
 	public void i_click_the_teams_nav_option() throws InterruptedException {
-	    mainPage.clickTeamsNav(driver);
+	    MP.clickTeamsNav(driver);
 	}
 
 	@Then("I should be at the Teams page")
@@ -56,7 +56,7 @@ public class NavSteps {
 	
 	@When("I click the teams Fixtures option")
 	public void i_click_the_teams_fixtures_option() {
-	    mainPage.clickFixturesNav(driver);
+	    MP.clickFixturesNav(driver);
 	}
 
 	@Then("I should be at the fixtures page")
@@ -66,7 +66,7 @@ public class NavSteps {
 
 	@When("I click the teams gallery option")
 	public void i_click_the_teams_gallery_option() {
-	    mainPage.clickGalleryNav(driver);
+	    MP.clickGalleryNav(driver);
 	}
 
 	@Then("I should be at the gallery page")
@@ -76,7 +76,7 @@ public class NavSteps {
 
 	@When("I click the News option")
 	public void i_click_the_news_option() {
-	    mainPage.clickNewsNav(driver);
+	    MP.clickNewsNav(driver);
 	}
 
 	@Then("I should be at the news page")
@@ -86,11 +86,31 @@ public class NavSteps {
 	
 	@When("I click the Contact Us option")
 	public void i_click_the_contact_us_option() {
-	    mainPage.clickContactNav(driver);
+	    MP.clickContactNav(driver);
 	}
 
 	@Then("I should be at the Contact Us page")
 	public void i_should_be_at_the_contact_us_page() {
 	    CP.checkContact(driver);
+	}
+	
+	@When("I click the gallery view more button")
+	public void i_click_the_gallery_view_more_button() {
+	    MP.clickViewMore(driver);
+	}
+
+	@When("I click the latest news button")
+	public void i_click_the_latest_news_button() {
+	    MP.clickLatestNews(driver);
+	}
+
+	@When("I click the latest fixtures button")
+	public void i_click_the_latest_fixtures_button() {
+	    MP.clickUpcomingMatches(driver);
+	}
+
+	@When("I click the recent results button")
+	public void i_click_the_recent_results_button() {
+	    MP.clickRecentResults(driver);
 	}
 }
